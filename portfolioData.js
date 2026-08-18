@@ -299,43 +299,11 @@ export const projectsData = [
   },
 ];
 
-export const testimonialsData = [
-  {
-    text: 'Shruti is an exceptional full-stack developer with deep knowledge of backend architecture and modern frontend frameworks. She delivered the entire Ecommarkt platform with remarkable attention to detail and scalability.',
-    author: 'Rajesh Kumar',
-    title: 'CTO',
-    company: 'House of Cre8r',
-    rating: 5,
-  },
-  {
-    text: 'Her ability to handle complex database optimization and API design is outstanding. The 800ms to 200ms optimization she did on TransRentals significantly improved our platform performance.',
-    author: 'Priya Sharma',
-    title: 'Product Manager',
-    company: 'TransRentals',
-    rating: 5,
-  },
-  {
-    text: 'Working with Shruti was a game-changer. She built the entire subscription system generating $50K+ monthly revenue and implemented features that directly improved our conversion by 35%.',
-    author: 'Amit Patel',
-    title: 'Founder',
-    company: 'Ecommarkt',
-    rating: 5,
-  },
-  {
-    text: 'Her expertise in React Native and cross-platform development helped us launch our mobile apps on schedule. She is proactive, solution-focused, and delivers quality code consistently.',
-    author: 'Deepak Singh',
-    title: 'Technical Lead',
-    company: 'House of Cre8r',
-    rating: 5,
-  },
-];
-
 export const navigationItems = [
   { label: 'About', id: 'about' },
   { label: 'Services', id: 'services' },
   { label: 'Work', id: 'projects' },
   { label: 'Skills', id: 'skills' },
-  { label: 'Testimonials', id: 'testimonials' },
   { label: 'FAQ', id: 'faq' },
   { label: 'Contact', id: 'contact' },
 ];

@@ -11,9 +11,8 @@ import ServicesSection from './ServicesSection';
 import ProjectsSection from './ProjectsSection';
 import SkillsSection from './SkillsSection';
 import ProcessSection from './ProcessSection';
-import TestimonialsSection from './TestimonialsSection';
 import FAQSection from './FAQSection';
-import { projectsData, testimonialsData, experienceData, socialLinks } from '../portfolioData';
+import { projectsData, experienceData, socialLinks } from '../portfolioData';
 import { motion } from 'framer-motion';
 import { Mail, Phone, Linkedin, Github, MessageCircle, ArrowUp, Send } from 'lucide-react';
 import SmoothScrollProvider from './SmoothScrollProvider';
@@ -131,11 +130,6 @@ function PortfolioContent() {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section id="testimonials">
-        <TestimonialsSection testimonials={testimonialsData} />
-      </section>
-
       {/* FAQ Section */}
       <FAQSection />
 
@@ -245,7 +239,7 @@ function PortfolioContent() {
             <div>
               <p className="text-white font-semibold mb-3 text-sm tracking-wide uppercase">Quick Links</p>
               <ul className="space-y-2 text-sm">
-                {['About', 'Services', 'Projects', 'Skills', 'Testimonials', 'FAQ', 'Contact'].map((label) => (
+                {['About', 'Services', 'Projects', 'Skills', 'FAQ', 'Contact'].map((label) => (
                   <li key={label}>
                     <button
                       onClick={() => {
