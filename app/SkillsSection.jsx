@@ -52,23 +52,14 @@ const SkillCategory = ({ category, skills, icon: Icon, index }) => {
         className="overflow-hidden"
       >
         <div className="mt-2 p-6 rounded-xl bg-slate-900/50 border border-slate-700">
-          <div className="space-y-4">
+          <div className="flex flex-wrap gap-2">
             {skills.map((skill, i) => (
-              <div key={i}>
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-white font-medium">{skill.name}</span>
-                  <span className="text-cyan-400 text-sm font-semibold">{skill.level}%</span>
-                </div>
-                {/* Animated Skill Bar */}
-                <div className="h-2 bg-slate-800 rounded-full overflow-hidden border border-slate-700">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: `${skill.level}%` }}
-                    transition={{ delay: i * 0.1, duration: 1 }}
-                    className="h-full bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full"
-                  />
-                </div>
-              </div>
+              <span
+                key={i}
+                className="px-3 py-1.5 text-sm bg-slate-800/70 text-white rounded-full border border-slate-600"
+              >
+                {skill.name}
+              </span>
             ))}
           </div>
         </div>
@@ -83,59 +74,59 @@ const SkillsSection = () => {
       category: 'Backend Development',
       icon: Code2,
       skills: [
-        { name: 'Node.js & Express', level: 95 },
-        { name: 'Laravel 11', level: 90 },
-        { name: 'REST API Design', level: 95 },
-        { name: 'Database Architecture', level: 92 },
-        { name: 'Authentication Systems', level: 90 },
-        { name: 'Payment Integration', level: 88 },
+        { name: 'Node.js & Express' },
+        { name: 'Laravel 11' },
+        { name: 'REST API Design' },
+        { name: 'Database Architecture' },
+        { name: 'Authentication Systems' },
+        { name: 'Payment Integration' },
       ],
     },
     {
       category: 'Frontend Development',
       icon: Zap,
       skills: [
-        { name: 'React 18', level: 95 },
-        { name: 'Next.js 14', level: 93 },
-        { name: 'TypeScript', level: 90 },
-        { name: 'Tailwind CSS', level: 92 },
-        { name: 'Framer Motion', level: 88 },
-        { name: 'UI/UX Implementation', level: 89 },
+        { name: 'React 18' },
+        { name: 'Next.js 14' },
+        { name: 'TypeScript' },
+        { name: 'Tailwind CSS' },
+        { name: 'Framer Motion' },
+        { name: 'UI/UX Implementation' },
       ],
     },
     {
       category: 'Mobile Development',
       icon: Smartphone,
       skills: [
-        { name: 'React Native', level: 92 },
-        { name: 'iOS & Android', level: 88 },
-        { name: 'Firebase Integration', level: 90 },
-        { name: 'Real-time Notifications', level: 89 },
-        { name: 'Native Modules', level: 85 },
-        { name: 'Cross-platform Development', level: 91 },
+        { name: 'React Native' },
+        { name: 'iOS & Android' },
+        { name: 'Firebase Integration' },
+        { name: 'Real-time Notifications' },
+        { name: 'Native Modules' },
+        { name: 'Cross-platform Development' },
       ],
     },
     {
       category: 'Database & Tools',
       icon: Database,
       skills: [
-        { name: 'MySQL', level: 94 },
-        { name: 'Prisma ORM', level: 92 },
-        { name: 'Query Optimization', level: 93 },
-        { name: 'Database Design', level: 94 },
-        { name: 'Firebase', level: 88 },
-        { name: 'Git & Version Control', level: 91 },
+        { name: 'MySQL' },
+        { name: 'Prisma ORM' },
+        { name: 'Query Optimization' },
+        { name: 'Database Design' },
+        { name: 'Firebase' },
+        { name: 'Git & Version Control' },
       ],
     },
     {
       category: 'AI & API Integration',
       icon: Bot,
       skills: [
-        { name: 'AI Chatbot Integration', level: 88 },
-        { name: 'Gemini / Grok API', level: 86 },
-        { name: 'Third-Party API Integration', level: 92 },
-        { name: 'Razorpay & Payment Gateways', level: 90 },
-        { name: 'Workflow Automation', level: 85 },
+        { name: 'AI Chatbot Integration' },
+        { name: 'Gemini / Grok API' },
+        { name: 'Third-Party API Integration' },
+        { name: 'Razorpay & Payment Gateways' },
+        { name: 'Workflow Automation' },
       ],
     },
   ];
