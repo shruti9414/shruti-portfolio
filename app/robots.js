@@ -4,6 +4,6 @@ export default function robots() {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://shrutidodiya.com/sitemap.xml',
+    sitemap: 'https://shruti9414.github.io/sitemap.xml',
   };
 }

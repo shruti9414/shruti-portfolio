@@ -1,7 +1,7 @@
 export default function sitemap() {
   return [
     {
-      url: 'https://shrutidodiya.com',
+      url: 'https://shruti9414.github.io',
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 1,

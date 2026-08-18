@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import './globals.css';
 
 export const metadata = {
-  metadataBase: new URL('https://shrutidodiya.com'),
+  metadataBase: new URL('https://shruti9414.github.io'),
   title: 'Shruti Dodiya | Full Stack Developer',
   description:
     'Full Stack Developer with 1.5+ years of experience building scalable enterprise platforms. Specialized in Node.js, React, Laravel, and React Native.',
@@ -23,17 +23,22 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://shrutidodiya.com',
+    url: 'https://shruti9414.github.io',
     site_name: 'Shruti Dodiya',
     title: 'Shruti Dodiya | Full Stack Developer',
     description:
       'Full Stack Developer with 1.5+ years of experience building scalable enterprise platforms.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Shruti Dodiya - Full Stack Developer' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Shruti Dodiya | Full Stack Developer',
     description:
       'Full Stack Developer with 1.5+ years of experience building scalable enterprise platforms.',
+    images: ['/og-image.png'],
+  },
+  icons: {
+    icon: '/favicon.png',
   },
   robots: {
     index: true,
@@ -53,7 +58,7 @@ const personJsonLd = {
   '@type': 'Person',
   name: 'Shruti Dodiya',
   jobTitle: 'Full Stack Developer',
-  url: 'https://shrutidodiya.com',
+  url: 'https://shruti9414.github.io',
   email: 'mailto:shrutidodiya9414@gmail.com',
   telephone: '+91-9558463190',
   address: {
