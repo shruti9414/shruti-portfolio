@@ -71,12 +71,13 @@ const ProjectCard = ({ project, index }) => {
         <div className="flex items-start justify-between mb-4">
           <div>
             <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
+            <p className="text-xs text-slate-500 uppercase tracking-wide font-semibold mb-0.5">My Role</p>
             <p className="text-sm text-cyan-400 font-medium">{project.role}</p>
           </div>
         </div>
 
         {/* Description */}
-        <p className="text-slate-300 text-sm mb-4 line-clamp-2">{project.description}</p>
+        <p className="text-slate-300 text-sm mb-4">{project.description}</p>
 
         {/* Impact Metrics */}
         <div className="grid grid-cols-3 gap-3 mb-4 pb-4 border-b border-slate-700">
@@ -90,21 +91,17 @@ const ProjectCard = ({ project, index }) => {
 
         {/* Tech Stack */}
         <div className="flex flex-wrap gap-2 mb-4">
-          {project.tech.slice(0, 4).map((tech, i) => (
+          {project.tech.map((tech, i) => (
             <span key={i} className="px-3 py-1 text-xs bg-slate-700/50 text-cyan-300 rounded-full border border-slate-600">
               {tech}
             </span>
           ))}
-          {project.tech.length > 4 && (
-            <span className="px-3 py-1 text-xs bg-slate-700/50 text-slate-400 rounded-full border border-slate-600">
-              +{project.tech.length - 4} more
-            </span>
-          )}
         </div>
 
-        {/* Key Features */}
+        {/* Key Features & Results */}
+        <p className="text-xs text-slate-500 uppercase tracking-wide font-semibold mb-2">Key Features & Results</p>
         <div className="space-y-2 mb-4">
-          {project.highlights.slice(0, 2).map((highlight, i) => (
+          {project.highlights.slice(0, 4).map((highlight, i) => (
             <div key={i} className="flex items-start gap-2 text-sm">
               <Zap size={16} className="text-cyan-400 flex-shrink-0 mt-0.5" />
               <p className="text-slate-300">{highlight}</p>
@@ -159,7 +156,7 @@ const ProjectsSection = ({ projects }) => {
             Projects That <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">Drive Impact</span>
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            Large-scale platforms built from ground up, handling 50K-200K+ users with robust backend architecture and seamless frontend experiences.
+            From production platforms serving real users to focused AI builds — here's my role, stack, and results on each.
           </p>
         </motion.div>
 

@@ -1,10 +1,10 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Download } from 'lucide-react';
+import { Menu, X, Download, Github, Linkedin } from 'lucide-react';
 import { useState } from 'react';
 import SDLogo from './SDLogo';
-import { navigationItems } from '../portfolioData';
+import { navigationItems, socialLinks } from '../portfolioData';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,6 +18,8 @@ export default function Header() {
   };
 
   const navItems = [{ label: 'Home', id: 'hero' }, ...navigationItems];
+  const githubUrl = socialLinks.find((l) => l.name === 'GitHub')?.url;
+  const linkedinUrl = socialLinks.find((l) => l.name === 'LinkedIn')?.url;
 
   return (
     <motion.header
@@ -37,7 +39,7 @@ export default function Header() {
         </button>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-5 xl:gap-7" aria-label="Primary">
+        <nav className="hidden lg:flex items-center gap-4 xl:gap-6" aria-label="Primary">
           {navItems.map((item) => (
             <motion.button
               key={item.id}
@@ -51,7 +53,29 @@ export default function Header() {
         </nav>
 
         {/* Desktop CTAs */}
-        <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+        <div className="hidden lg:flex items-center gap-2 xl:gap-3 flex-shrink-0">
+          {githubUrl && (
+            <a
+              href={githubUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+              className="p-2 rounded-lg text-white/70 hover:text-cyan-400 hover:bg-cyan-500/5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            >
+              <Github size={18} />
+            </a>
+          )}
+          {linkedinUrl && (
+            <a
+              href={linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="p-2 rounded-lg text-white/70 hover:text-cyan-400 hover:bg-cyan-500/5 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+            >
+              <Linkedin size={18} />
+            </a>
+          )}
           <a
             href="/resume.pdf"
             download
@@ -99,10 +123,22 @@ export default function Header() {
                   {item.label}
                 </motion.button>
               ))}
+              <div className="flex items-center gap-4 pt-2 border-t border-white/10">
+                {githubUrl && (
+                  <a href={githubUrl} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="text-white/70 hover:text-cyan-400 transition-colors">
+                    <Github size={20} />
+                  </a>
+                )}
+                {linkedinUrl && (
+                  <a href={linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-white/70 hover:text-cyan-400 transition-colors">
+                    <Linkedin size={20} />
+                  </a>
+                )}
+              </div>
               <a
                 href="/resume.pdf"
                 download
-                className="flex items-center gap-2 text-white/70 hover:text-cyan-400 transition-colors text-sm font-medium pt-2 border-t border-white/10"
+                className="flex items-center gap-2 text-white/70 hover:text-cyan-400 transition-colors text-sm font-medium"
               >
                 <Download size={16} />
                 Download Resume

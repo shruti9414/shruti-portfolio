@@ -1,10 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Code2, Smartphone, Plug, Bot, ShoppingCart, Database, Check } from 'lucide-react';
+import { Code2, Smartphone, Plug, Bot, Atom, Server, Bug, Wrench, Check } from 'lucide-react';
 import { servicesData } from '../portfolioData';
 
-const ICONS = { Code2, Smartphone, Plug, Bot, ShoppingCart, Database };
+const ICONS = { Code2, Smartphone, Plug, Bot, Atom, Server, Bug, Wrench };
 
 export default function ServicesSection() {
   return (
@@ -25,7 +25,7 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {servicesData.map((service, index) => {
             const Icon = ICONS[service.icon] || Code2;
             return (
@@ -34,7 +34,7 @@ export default function ServicesSection() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: (index % 3) * 0.1 }}
+                transition={{ delay: (index % 4) * 0.08 }}
                 whileHover={{ y: -6 }}
                 className="p-6 rounded-xl bg-gradient-to-br from-slate-800 to-slate-900 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300"
               >

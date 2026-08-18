@@ -5,6 +5,7 @@ import LoadingScreen from './LoadingScreen';
 import HeroPremium from './HeroPremium';
 import CodeCursor from './CodeCursor';
 import Header from './Header';
+import WhyHireMeSection from './WhyHireMeSection';
 import AboutSection from './AboutSection';
 import ServicesSection from './ServicesSection';
 import ProjectsSection from './ProjectsSection';
@@ -62,6 +63,9 @@ function PortfolioContent() {
 
       {/* Premium Hero */}
       <HeroPremium />
+
+      {/* Why Hire Me Section */}
+      <WhyHireMeSection />
 
       {/* About Section */}
       <AboutSection />

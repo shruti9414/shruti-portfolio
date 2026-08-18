@@ -1,22 +1,23 @@
-import { Metadata } from 'next';
 import './globals.css';
 
 export const metadata = {
   metadataBase: new URL('https://shruti9414.github.io'),
-  title: 'Shruti Dodiya | Full Stack Developer',
+  title: 'Shruti Dodiya | Full-Stack Web & Mobile Developer',
   description:
-    'Full Stack Developer with 1.5+ years of experience building scalable enterprise platforms. Specialized in Node.js, React, Laravel, and React Native.',
+    'Full-Stack Web & Mobile Developer with 1.5+ years of experience building production-ready platforms. Specialized in React, Node.js, Laravel, React Native, and AI chatbot integration. Available for freelance projects.',
   keywords: [
     'Full Stack Developer',
-    'Frontend Developer',
-    'Backend Developer',
+    'Freelance Developer',
     'React Developer',
     'Next.js Developer',
     'Node.js Developer',
     'Laravel Developer',
-    'Mobile Developer',
-    'React Native',
-    'Web Developer',
+    'PHP Developer',
+    'React Native Developer',
+    'Mobile App Developer',
+    'AI Chatbot Integration',
+    'API Development',
+    'Web Developer India',
   ],
   authors: [{ name: 'Shruti Dodiya' }],
   creator: 'Shruti Dodiya',
@@ -25,16 +26,16 @@ export const metadata = {
     locale: 'en_US',
     url: 'https://shruti9414.github.io',
     site_name: 'Shruti Dodiya',
-    title: 'Shruti Dodiya | Full Stack Developer',
+    title: 'Shruti Dodiya | Full-Stack Web & Mobile Developer',
     description:
-      'Full Stack Developer with 1.5+ years of experience building scalable enterprise platforms.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Shruti Dodiya - Full Stack Developer' }],
+      'Full-Stack Web & Mobile Developer specializing in React, Node.js, Laravel, React Native, and AI integration. Available for freelance projects.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'Shruti Dodiya - Full-Stack Web & Mobile Developer' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Shruti Dodiya | Full Stack Developer',
+    title: 'Shruti Dodiya | Full-Stack Web & Mobile Developer',
     description:
-      'Full Stack Developer with 1.5+ years of experience building scalable enterprise platforms.',
+      'Full-Stack Web & Mobile Developer specializing in React, Node.js, Laravel, React Native, and AI integration.',
     images: ['/og-image.png'],
   },
   icons: {
@@ -57,7 +58,7 @@ const personJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Shruti Dodiya',
-  jobTitle: 'Full Stack Developer',
+  jobTitle: 'Full-Stack Web & Mobile Developer',
   url: 'https://shruti9414.github.io',
   email: 'mailto:shrutidodiya9414@gmail.com',
   telephone: '+91-9558463190',

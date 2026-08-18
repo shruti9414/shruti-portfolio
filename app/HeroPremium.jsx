@@ -98,12 +98,12 @@ export default function HeroPremium() {
 
             {/* Role */}
             <motion.p
-              className="text-2xl md:text-3xl text-cyan-400 font-semibold mb-4"
+              className="text-xl md:text-2xl text-cyan-400 font-semibold mb-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
             >
-              Full Stack Developer
+              Full-Stack Web & Mobile Developer <span className="text-white/40 font-normal">|</span> React, Node.js, Laravel & AI
             </motion.p>
 
             {/* Company & Description */}
@@ -114,7 +114,7 @@ export default function HeroPremium() {
               transition={{ delay: 0.7, duration: 1 }}
             >
               <p className="text-white/80 text-lg max-w-2xl leading-relaxed">
-                Currently building enterprise-grade web and mobile applications at
+                I build production-ready web and mobile products — from React/Next.js frontends to Node.js/Laravel backends and AI-powered features — for businesses that need to ship fast without cutting corners. Currently building enterprise-grade platforms at
                 <span className="text-cyan-400 font-semibold"> House of Cre8r</span>.
               </p>
 
@@ -151,12 +151,12 @@ export default function HeroPremium() {
               transition={{ delay: 1.3, duration: 1 }}
             >
               <button
-                onClick={() => scrollToSection('projects')}
+                onClick={() => scrollToSection('contact')}
                 className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative flex items-center justify-center gap-2">
-                  View Work
+                  Hire Me
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
@@ -164,10 +164,10 @@ export default function HeroPremium() {
               </button>
 
               <button
-                onClick={() => scrollToSection('contact')}
+                onClick={() => scrollToSection('projects')}
                 className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-lg hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
               >
-                Get in Touch
+                View My Work
               </button>
 
               <a

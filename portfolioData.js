@@ -30,13 +30,72 @@ export const aboutData = {
   ],
 };
 
+export const whyHireMeData = [
+  {
+    title: 'Production-Ready Development',
+    icon: 'CheckCircle2',
+    description: 'I ship code built for real users, not just demos — tested, documented, and ready to deploy.',
+  },
+  {
+    title: 'Web + Mobile Expertise',
+    icon: 'Layers',
+    description: 'One developer for both platforms — React/Next.js on web, React Native on mobile, consistent quality across both.',
+  },
+  {
+    title: 'AI Integration',
+    icon: 'Bot',
+    description: 'Hands-on experience wiring AI chat assistants and LLM APIs (Gemini/Grok) into real product workflows.',
+  },
+  {
+    title: 'Scalable APIs',
+    icon: 'Network',
+    description: 'REST APIs and database schemas designed to hold up under real traffic, not just pass a demo.',
+  },
+  {
+    title: 'Secure Development',
+    icon: 'ShieldCheck',
+    description: 'Role-based access control, proper auth flows, and safe handling of payments and user data by default.',
+  },
+  {
+    title: 'Clear Communication',
+    icon: 'MessagesSquare',
+    description: 'Regular updates, honest timelines, and no disappearing mid-project — you always know where things stand.',
+  },
+  {
+    title: 'Post-Launch Support',
+    icon: 'LifeBuoy',
+    description: "Launch day isn't the finish line — I stay available for bug fixes, tweaks, and future iterations.",
+  },
+];
+
 export const servicesData = [
   {
-    title: 'Web Application Development',
+    title: 'Full-Stack Web Development',
     icon: 'Code2',
     description:
-      'Custom web apps, admin dashboards, and business platforms built with React, Next.js, Node.js, or Laravel.',
-    features: ['Responsive, production-ready UI', 'Scalable backend architecture', 'Admin panels & dashboards'],
+      'End-to-end web applications — from database design to a polished, responsive frontend.',
+    features: ['Custom web apps & admin dashboards', 'Database design (MySQL, Prisma)', 'Deployment & production setup'],
+  },
+  {
+    title: 'React.js Development',
+    icon: 'Atom',
+    description:
+      'Fast, modern frontends with React and Next.js — clean component architecture, no bloat.',
+    features: ['React 18 & Next.js 14', 'Responsive, accessible UI', 'Performance-focused builds'],
+  },
+  {
+    title: 'Laravel / PHP Development',
+    icon: 'Server',
+    description:
+      'Solid backend systems in Laravel — REST APIs, auth, and admin workflows done right.',
+    features: ['Laravel 11 REST APIs', 'Role-based authentication', 'Admin dashboards & workflows'],
+  },
+  {
+    title: 'Node.js Backend & API Development',
+    icon: 'Plug',
+    description:
+      'Scalable Node.js/Express backends and REST APIs built to handle real production traffic.',
+    features: ['Express REST APIs', 'Database & query optimization', 'Third-party integrations (Razorpay, Firebase, OTPless)'],
   },
   {
     title: 'Mobile App Development',
@@ -46,32 +105,25 @@ export const servicesData = [
     features: ['React Native (iOS & Android)', 'Push notifications & real-time updates', 'App Store / Play Store ready'],
   },
   {
-    title: 'API Development & Integration',
-    icon: 'Plug',
-    description:
-      'Robust REST APIs and seamless third-party integrations — payments, auth, maps, and more.',
-    features: ['REST API design & documentation', 'Razorpay, Firebase, OTPless integration', 'Third-party & legacy system integration'],
-  },
-  {
-    title: 'AI Chatbot & AI Integration',
+    title: 'AI Chatbot & AI API Integration',
     icon: 'Bot',
     description:
-      'Custom AI chat assistants and workflow automation powered by Gemini/Grok, built into real product flows.',
-    features: ['AI onboarding & support chatbots', 'Automated request/category workflows', 'LLM API integration'],
+      'Custom AI chat assistants and LLM API integration (Gemini/Grok) built into real product flows.',
+    features: ['AI onboarding & support chatbots', 'LLM API integration', 'Automated workflow features'],
   },
   {
-    title: 'E-Commerce & Marketplace Platforms',
-    icon: 'ShoppingCart',
+    title: 'Bug Fixing & Debugging',
+    icon: 'Bug',
     description:
-      'Multi-vendor marketplaces, service booking systems, and subscription platforms built for scale.',
-    features: ['Multi-vendor marketplace architecture', 'Booking & subscription systems', 'Payment gateway integration'],
+      "Stuck on a bug in an existing codebase? I can dig in, find the root cause, and fix it properly.",
+    features: ['Production issue debugging', 'Performance & query optimization', 'Code review & root-cause fixes'],
   },
   {
-    title: 'Database Architecture & Optimization',
-    icon: 'Database',
+    title: 'Maintenance & Ongoing Support',
+    icon: 'Wrench',
     description:
-      'Well-designed schemas and query optimization that keep your app fast as it grows.',
-    features: ['Schema design (MySQL, Prisma)', 'Query optimization', 'Data migration & scaling'],
+      'Post-launch support to keep your product running smoothly as it grows.',
+    features: ['Bug fixes & small enhancements', 'Dependency & security updates', 'Retainer or as-needed basis'],
   },
 ];
 
