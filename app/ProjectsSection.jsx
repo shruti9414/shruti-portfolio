@@ -1,38 +1,77 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Github, ExternalLink, Code2, Users, TrendingUp, Zap } from 'lucide-react';
+import {
+  Github,
+  ExternalLink,
+  Code2,
+  Users,
+  TrendingUp,
+  Zap,
+  ShoppingCart,
+  Truck,
+  Package,
+  Bot,
+} from 'lucide-react';
+
+const PROJECT_ICONS = { ShoppingCart, Truck, Package, Bot };
+
+const ProjectImage = ({ image, title, icon, accent }) => {
+  const [errored, setErrored] = useState(false);
+  const Icon = PROJECT_ICONS[icon] || Code2;
+
+  if (!image || errored) {
+    return (
+      <div
+        className={`w-full h-44 flex flex-col items-center justify-center gap-3 bg-gradient-to-br ${
+          accent || 'from-cyan-500/10 to-blue-500/10'
+        } border-b border-slate-700`}
+      >
+        <div className="w-14 h-14 rounded-2xl bg-black/20 border border-cyan-400/20 flex items-center justify-center">
+          <Icon className="w-7 h-7 text-cyan-400" />
+        </div>
+        <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">
+          {title}
+        </span>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={image}
+      alt={`${title} project screenshot`}
+      loading="lazy"
+      onError={() => setErrored(true)}
+      className="w-full h-44 object-cover border-b border-slate-700"
+    />
+  );
+};
 
 const ProjectCard = ({ project, index }) => {
+  const hasLiveLink = project.link && project.link !== '#';
+  const hasGithubLink = project.github && project.github !== '#';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
       transition={{ delay: index * 0.2 }}
       whileHover={{ y: -10 }}
-      className="group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300"
+      className="group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-xl overflow-hidden border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 flex flex-col"
     >
       {/* Glow Effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/0 via-cyan-600/0 to-cyan-600/0 group-hover:from-cyan-600/20 group-hover:via-cyan-600/10 group-hover:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/0 via-cyan-600/0 to-cyan-600/0 group-hover:from-cyan-600/20 group-hover:via-cyan-600/10 group-hover:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+
+      <ProjectImage image={project.image} title={project.title} icon={project.icon} accent={project.accent} />
 
       {/* 3D Transform on Hover */}
-      <div className="relative p-6 transform group-hover:scale-105 transition-transform duration-300">
+      <div className="relative p-6 flex-1 flex flex-col">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div>
             <h3 className="text-xl font-bold text-white mb-1">{project.title}</h3>
             <p className="text-sm text-cyan-400 font-medium">{project.role}</p>
-          </div>
-          <div className="flex gap-2">
-            {project.github && (
-              <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                <Github size={20} />
-              </a>
-            )}
-            {project.link && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-cyan-400 transition-colors">
-                <ExternalLink size={20} />
-              </a>
-            )}
           </div>
         </div>
 
@@ -64,7 +103,7 @@ const ProjectCard = ({ project, index }) => {
         </div>
 
         {/* Key Features */}
-        <div className="space-y-2">
+        <div className="space-y-2 mb-4">
           {project.highlights.slice(0, 2).map((highlight, i) => (
             <div key={i} className="flex items-start gap-2 text-sm">
               <Zap size={16} className="text-cyan-400 flex-shrink-0 mt-0.5" />
@@ -72,6 +111,34 @@ const ProjectCard = ({ project, index }) => {
             </div>
           ))}
         </div>
+
+        {/* Actions */}
+        {(hasLiveLink || hasGithubLink) && (
+          <div className="mt-auto pt-4 border-t border-slate-700 flex gap-3">
+            {hasLiveLink && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-sm font-medium hover:bg-cyan-500/20 hover:border-cyan-400 transition-colors"
+              >
+                <ExternalLink size={16} />
+                Live Demo
+              </a>
+            )}
+            {hasGithubLink && (
+              <a
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-slate-700/40 border border-slate-600 text-slate-300 text-sm font-medium hover:bg-slate-700 hover:text-white transition-colors"
+              >
+                <Github size={16} />
+                Source Code
+              </a>
+            )}
+          </div>
+        )}
       </div>
     </motion.div>
   );

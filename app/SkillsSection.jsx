@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Code2, Database, Smartphone, Zap } from 'lucide-react';
+import { Code2, Database, Smartphone, Zap, Bot } from 'lucide-react';
 
 const SkillCategory = ({ category, skills, icon: Icon, index }) => {
   const [expanded, setExpanded] = useState(false);
@@ -127,6 +127,17 @@ const SkillsSection = () => {
         { name: 'Git & Version Control', level: 91 },
       ],
     },
+    {
+      category: 'AI & API Integration',
+      icon: Bot,
+      skills: [
+        { name: 'AI Chatbot Integration', level: 88 },
+        { name: 'Gemini / Grok API', level: 86 },
+        { name: 'Third-Party API Integration', level: 92 },
+        { name: 'Razorpay & Payment Gateways', level: 90 },
+        { name: 'Workflow Automation', level: 85 },
+      ],
+    },
   ];
 
   return (
@@ -169,18 +180,20 @@ const SkillsSection = () => {
           <h3 className="text-xl font-bold text-white mb-6">Tools & Platforms</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              'Razorpay',
-              'Firebase',
-              'OTPless',
-              'Claude AI',
               'Git',
-              'Docker',
-              'AWS',
+              'GitHub',
+              'VS Code',
+              'Postman',
+              'npm',
+              'Composer',
               'Vercel',
-              'Stripe',
-              'GraphQL',
-              'Redis',
-              'WebSockets',
+              'Docker',
+              'Firebase',
+              'MySQL / phpMyAdmin',
+              'Railway',
+              'Razorpay',
+              'Cursor',
+              'Canva',
             ].map((tool, i) => (
               <motion.div
                 key={i}

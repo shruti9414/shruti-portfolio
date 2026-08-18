@@ -4,10 +4,20 @@ import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 
 export default function LoadingScreen({ onComplete }) {
+  // Always starts true so server and client render the same thing on first
+  // paint (avoids a hydration mismatch) — the session check below then skips
+  // the animation immediately after mount if it's already been shown.
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    if (sessionStorage.getItem('sd-portfolio-loaded') === 'true') {
+      setIsLoading(false);
+      onComplete?.();
+      return;
+    }
+
     const timer = setTimeout(() => {
+      sessionStorage.setItem('sd-portfolio-loaded', 'true');
       setIsLoading(false);
       onComplete?.();
     }, 3000);

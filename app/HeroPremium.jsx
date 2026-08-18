@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { Download } from 'lucide-react';
 import CircularNeonGlobe from './CircularNeonGlobe';
 
 export default function HeroPremium() {
@@ -15,6 +16,13 @@ export default function HeroPremium() {
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="hero" className="relative w-full min-h-screen bg-black overflow-hidden flex items-center justify-center">
@@ -125,7 +133,7 @@ export default function HeroPremium() {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1, duration: 1 }}
             >
-              {['React', 'Node.js', 'Next.js', 'Three.js', 'TypeScript'].map((tag, i) => (
+              {['React', 'Node.js', 'Next.js', 'PHP', 'TypeScript'].map((tag, i) => (
                 <span
                   key={i}
                   className="px-4 py-2 rounded-full border border-cyan-500/30 text-cyan-400 text-sm font-medium backdrop-blur-sm bg-cyan-500/5 hover:border-cyan-400 transition-colors"
@@ -142,7 +150,10 @@ export default function HeroPremium() {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.3, duration: 1 }}
             >
-              <button className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg overflow-hidden">
+              <button
+                onClick={() => scrollToSection('projects')}
+                className="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <span className="relative flex items-center justify-center gap-2">
                   View Work
@@ -152,9 +163,21 @@ export default function HeroPremium() {
                 </span>
               </button>
 
-              <button className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-lg hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300">
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 font-semibold rounded-lg hover:border-cyan-400 hover:bg-cyan-500/10 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              >
                 Get in Touch
               </button>
+
+              <a
+                href="/resume.pdf"
+                download
+                className="px-8 py-4 border-2 border-white/15 text-white/80 font-semibold rounded-lg hover:border-cyan-400/60 hover:text-cyan-400 hover:bg-cyan-500/5 transition-all duration-300 flex items-center justify-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              >
+                <Download size={18} />
+                Download Resume
+              </a>
             </motion.div>
           </motion.div>
 

@@ -5,12 +5,16 @@ import LoadingScreen from './LoadingScreen';
 import HeroPremium from './HeroPremium';
 import CodeCursor from './CodeCursor';
 import Header from './Header';
+import AboutSection from './AboutSection';
+import ServicesSection from './ServicesSection';
 import ProjectsSection from './ProjectsSection';
 import SkillsSection from './SkillsSection';
+import ProcessSection from './ProcessSection';
 import TestimonialsSection from './TestimonialsSection';
-import { projectsData, testimonialsData, experienceData } from '../portfolioData';
+import FAQSection from './FAQSection';
+import { projectsData, testimonialsData, experienceData, socialLinks } from '../portfolioData';
 import { motion } from 'framer-motion';
-import { Mail, Phone, Linkedin, Github, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, Linkedin, Github, MessageCircle, ArrowUp, Send } from 'lucide-react';
 import SmoothScrollProvider from './SmoothScrollProvider';
 import dynamic from 'next/dynamic';
 
@@ -59,6 +63,12 @@ function PortfolioContent() {
       {/* Premium Hero */}
       <HeroPremium />
 
+      {/* About Section */}
+      <AboutSection />
+
+      {/* Services Section */}
+      <ServicesSection />
+
       {/* Projects Section */}
       <section id="projects">
         <ProjectsSection projects={projectsData} />
@@ -68,6 +78,9 @@ function PortfolioContent() {
       <section id="skills">
         <SkillsSection />
       </section>
+
+      {/* Process Section */}
+      <ProcessSection />
 
       {/* Experience Section */}
       <section id="experience" className="relative py-20 bg-slate-950">
@@ -119,6 +132,9 @@ function PortfolioContent() {
         <TestimonialsSection testimonials={testimonialsData} />
       </section>
 
+      {/* FAQ Section */}
+      <FAQSection />
+
       {/* Contact Section */}
       <section id="contact" className="relative py-32 bg-gradient-to-b from-black to-black overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
@@ -144,7 +160,7 @@ function PortfolioContent() {
             </p>
 
             {/* Contact Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <motion.a
                 href="mailto:shrutidodiya9414@gmail.com"
                 whileHover={{ scale: 1.05, y: -5 }}
@@ -153,7 +169,20 @@ function PortfolioContent() {
               >
                 <Mail className="w-10 h-10 text-cyan-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
                 <p className="text-white font-semibold mb-2">Email</p>
-                <p className="text-white/60 text-sm">shrutidodiya9414@gmail.com</p>
+                <p className="text-white/60 text-sm break-all">shrutidodiya9414@gmail.com</p>
+              </motion.a>
+
+              <motion.a
+                href="https://wa.me/919558463190?text=Hi%20Shruti%2C%20I%20found%20your%20portfolio%20and%20I'd%20like%20to%20talk%20about%20a%20project."
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05, y: -5 }}
+                whileTap={{ scale: 0.98 }}
+                className="group p-8 rounded-xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 backdrop-blur-sm hover:border-cyan-400 hover:bg-gradient-to-br hover:from-cyan-500/20 hover:to-blue-500/10 transition-all duration-300"
+              >
+                <MessageCircle className="w-10 h-10 text-cyan-400 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+                <p className="text-white font-semibold mb-2">WhatsApp</p>
+                <p className="text-white/60 text-sm">Chat instantly</p>
               </motion.a>
 
               <motion.a
@@ -168,50 +197,169 @@ function PortfolioContent() {
               </motion.a>
             </div>
 
+            {/* Contact Form */}
+            <ContactForm />
+
             {/* Social Links */}
-            <div className="flex justify-center gap-4 mb-12">
+            <div className="flex justify-center gap-4 mt-12 mb-4">
               <motion.a
                 href="https://linkedin.com/in/shruti-dodiya-585453a"
                 target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -5 }}
-                className="p-4 rounded-full border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 backdrop-blur-sm text-cyan-400 hover:border-cyan-400 hover:bg-gradient-to-br hover:from-cyan-500/20 hover:to-blue-500/10 transition-all"
+                className="p-4 rounded-full border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 backdrop-blur-sm text-cyan-400 hover:border-cyan-400 hover:bg-gradient-to-br hover:from-cyan-500/20 hover:to-blue-500/10 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                aria-label="LinkedIn"
               >
                 <Linkedin size={24} />
               </motion.a>
               <motion.a
-                href="https://github.com"
+                href="https://github.com/shruti9414"
                 target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -5 }}
-                className="p-4 rounded-full border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 backdrop-blur-sm text-cyan-400 hover:border-cyan-400 hover:bg-gradient-to-br hover:from-cyan-500/20 hover:to-blue-500/10 transition-all"
+                className="p-4 rounded-full border border-cyan-500/20 bg-gradient-to-br from-cyan-500/10 to-blue-500/5 backdrop-blur-sm text-cyan-400 hover:border-cyan-400 hover:bg-gradient-to-br hover:from-cyan-500/20 hover:to-blue-500/10 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+                aria-label="GitHub"
               >
                 <Github size={24} />
               </motion.a>
             </div>
-
-            {/* CTA Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="group relative px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl overflow-hidden shadow-lg shadow-cyan-500/30"
-            >
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-600 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <span className="relative flex items-center gap-2 justify-center">
-                Start a Project
-                <ArrowUpRight size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </span>
-            </motion.button>
           </motion.div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative py-8 border-t border-cyan-500/10 bg-black">
-        <div className="max-w-7xl mx-auto px-6 text-center text-white/60 text-sm">
-          <p>© 2026 Shruti Dodiya. All rights reserved.</p>
-          <p className="mt-2">Crafted with React • Next.js • Three.js • Lenis • Framer Motion</p>
+      <footer className="relative pt-16 pb-8 border-t border-cyan-500/10 bg-black">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+            <div>
+              <p className="text-white font-bold text-lg mb-2">Shruti Dodiya</p>
+              <p className="text-white/60 text-sm leading-relaxed">
+                Full Stack Web & App Developer building scalable platforms, mobile apps, and AI-powered product features.
+              </p>
+            </div>
+
+            <div>
+              <p className="text-white font-semibold mb-3 text-sm tracking-wide uppercase">Quick Links</p>
+              <ul className="space-y-2 text-sm">
+                {['About', 'Services', 'Projects', 'Skills', 'Testimonials', 'FAQ', 'Contact'].map((label) => (
+                  <li key={label}>
+                    <button
+                      onClick={() => {
+                        const el = document.getElementById(label.toLowerCase());
+                        el?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                      className="text-white/60 hover:text-cyan-400 transition-colors"
+                    >
+                      {label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-white font-semibold mb-3 text-sm tracking-wide uppercase">Get in Touch</p>
+              <ul className="space-y-2 text-sm text-white/60">
+                <li>shrutidodiya9414@gmail.com</li>
+                <li>+91 9558463190</li>
+                <li>Ahmedabad, Gujarat, India</li>
+              </ul>
+              <div className="flex gap-3 mt-4">
+                {socialLinks.map((link) => (
+                  <a
+                    key={link.name}
+                    href={link.url}
+                    target={link.url.startsWith('http') ? '_blank' : undefined}
+                    rel={link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    aria-label={link.name}
+                    className="text-white/50 hover:text-cyan-400 transition-colors"
+                  >
+                    {link.icon === 'Mail' && <Mail size={18} />}
+                    {link.icon === 'Phone' && <Phone size={18} />}
+                    {link.icon === 'MessageCircle' && <MessageCircle size={18} />}
+                    {link.icon === 'Linkedin' && <Linkedin size={18} />}
+                    {link.icon === 'Github' && <Github size={18} />}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-8 text-white/60 text-sm">
+            <p>© {new Date().getFullYear()} Shruti Dodiya. All rights reserved.</p>
+            <p className="text-white/40">Crafted with React • Next.js • Three.js • Lenis • Framer Motion</p>
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="p-2 rounded-full border border-cyan-500/20 text-cyan-400 hover:border-cyan-400 hover:bg-cyan-500/10 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400"
+              aria-label="Back to top"
+            >
+              <ArrowUp size={18} />
+            </button>
+          </div>
         </div>
       </footer>
     </div>
+  );
+}
+
+function ContactForm() {
+  const [form, setForm] = useState({ name: '', email: '', message: '' });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const subject = encodeURIComponent(`Project inquiry from ${form.name || 'your portfolio'}`);
+    const body = encodeURIComponent(
+      `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
+    );
+    window.location.href = `mailto:shrutidodiya9414@gmail.com?subject=${subject}&body=${body}`;
+  };
+
+  return (
+    <form
+      onSubmit={handleSubmit}
+      className="max-w-2xl mx-auto text-left p-6 sm:p-8 rounded-2xl border border-cyan-500/20 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 backdrop-blur-sm"
+    >
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+        <input
+          type="text"
+          required
+          placeholder="Your Name"
+          value={form.name}
+          onChange={(e) => setForm({ ...form, name: e.target.value })}
+          className="w-full"
+        />
+        <input
+          type="email"
+          required
+          placeholder="Your Email"
+          value={form.email}
+          onChange={(e) => setForm({ ...form, email: e.target.value })}
+          className="w-full"
+        />
+      </div>
+      <textarea
+        required
+        rows={4}
+        placeholder="Tell me about your project..."
+        value={form.message}
+        onChange={(e) => setForm({ ...form, message: e.target.value })}
+        className="w-full mb-4"
+      />
+      <motion.button
+        type="submit"
+        whileHover={{ scale: 1.02 }}
+        whileTap={{ scale: 0.98 }}
+        className="group w-full sm:w-auto relative px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-xl overflow-hidden shadow-lg shadow-cyan-500/30 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-300"
+      >
+        <span className="relative flex items-center gap-2 justify-center">
+          Send Message
+          <Send size={18} className="group-hover:translate-x-1 transition-transform" />
+        </span>
+      </motion.button>
+      <p className="text-white/40 text-xs mt-3">
+        Opens your email app with this message pre-filled — or use WhatsApp above for a faster reply.
+      </p>
+    </form>
   );
 }
 
